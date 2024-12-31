@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .message {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff6161;
+        }
+
+        #fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #fireworks h2 {
+            color: #fffcfc;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+        }
+
+        #fireworks p {
+            color: #fffcfc;
+            font-size: 1.5rem;
+        }
+
+        .reply-form {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .reply-form:hover {
+            transform: translateY(-10px);
+        }
+
+        textarea {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            resize: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+
+        textarea:focus {
+            background: #ffd0d0;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.1);
+            background: #ff6161;
+        }
+
+        textarea::placeholder {
+            color: #777;
+            font-style: italic;
+        }
+
+        .reply-form h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy New Year, Beautiful!</h1>
+        <p class="message">
+            Wishing you a magical New Year filled with happiness, smiles, and all your dreams coming true! 
+            You make the world brighter, and I feel lucky to know you.
+        </p>
+        <button id="surpriseBtn">Click for a Surprise</button>
+        <div id="fireworks">
+            <h2>🎇 You're Special to Me 🎆</h2>
+            <p>Looking forward to spending an amazing year with you. ❤️</p>
+            <!-- Reply Form -->
+            <div class="reply-form">
+                <h3>Your Message</h3>
+                <form method="POST" data-netlify="true" name="reply">
+                    <input type="hidden" name="form-name" value="reply">
+                    <textarea name="message" placeholder="Write a thoughtful reply..." rows="4" required></textarea>
+                    <input type="submit" value="Send Reply">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("surpriseBtn").addEventListener("click", () => {
+            const fireworks = document.getElementById("fireworks");
+            fireworks.style.display = "flex";
+        });
+    </script>
+</body>
+</html>
